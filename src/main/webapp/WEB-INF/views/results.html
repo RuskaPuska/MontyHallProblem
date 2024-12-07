@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты вычислений</title>
+</head>
+<body>
+
+<div th:text="${'Число дверей: ' + problem.doorsAmount}"></div>
+<br/>
+<div th:text="${'Число игр: ' + problem.gamesAmount}"></div>
+<br/>
+<div th:text="${'Шанс угадать с первой попытки (без смены выбора): ' + problem.chanceWithoutChanging() + '%'}"></div>
+<br/>
+<div th:text="${'Шанс угадать со второй попытки (поменяв выбор): ' + problem.chanceWithChanging() + '%'}"></div>
+    <br/>
+    <hr/>
+    <a href="http://localhost:8080">Вернуться к условиям задачи</a>
+</form>
+</body>
+</html>

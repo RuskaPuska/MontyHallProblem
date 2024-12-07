@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Парадокс Монти Холла</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/}" th:object="${problem}">
+    <label for="doorsAmount">Введите общее количество дверей: </label>
+    <input type="text" th:field="*{doorsAmount}" id="doorsAmount"/>
+    <div style="color: red" th:if="${#fields.hasErrors('doorsAmount')}" th:errors="*{doorsAmount}">Ошибка по дверям</div>
+    <br/>
+    <label for="gamesAmount">Введите количество игр (для более точного результата: </label>
+    <input type="text" th:field="*{gamesAmount}" id="gamesAmount"/>
+    <div style="color: red" th:if="${#fields.hasErrors('gamesAmount')}" th:errors="*{gamesAmount}">Ошибка по играм</div>
+    <br/>
+    <label for="isBogdan">Поставь галочку, если ты Богдан: </label>
+    <input type="checkbox" th:checked="*{isBogdan}" id="isBogdan"/>
+    <br/>
+    <hr/>
+    <input type="submit" value="Ввести!"/>
+</form>
+</body>
+</html>
